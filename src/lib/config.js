@@ -7,4 +7,4 @@ export const CHUNK_SIZE = 2048 // bytes of file data per frame
 export const PARITY_GROUP = 4
 export const QR_ERROR_CORRECTION = 'M' // L | M | Q | H
 export const QR_MARGIN = 4 // quiet zone, in modules
-export const FRAME_FPS = 5 // QR frames shown per second
+export const FRAME_FPS = 8 // QR frames shown per second
