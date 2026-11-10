@@ -26,14 +26,14 @@ export default function Send() {
 
       // Files are processed strictly one after another.
       for (let fileIndex = 0; fileIndex < files.length; fileIndex++) {
-        const { totalPages, frames } = await fileToFrames(files[fileIndex], fileIndex)
+        const { totalFrames, frames } = await fileToFrames(files[fileIndex], fileIndex)
         let page = 0
         for (const frame of frames) {
           page++
           stack.add(frame)
           // Yield to the UI now and then so progress actually renders.
-          if (page % 20 === 0 || page === totalPages) {
-            setProgress({ fileIndex, page, totalPages })
+          if (page % 20 === 0 || page === totalFrames) {
+            setProgress({ fileIndex, page, totalPages: totalFrames })
             await new Promise((r) => setTimeout(r))
           }
         }
